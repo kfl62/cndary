@@ -1,10 +1,17 @@
 ####Configurare Ubntu
+  * configurare aplicatie
+
+      - `git clone https://kfl62@bitbucket.org/kfl62/cndary.git`
+      - `cd /opt/nginx/html`
+
   * configurare system
 
-      - server MySQL
-          - implicit pornit on reboot
+      - server web configurare `/opt/nginx/conf`
+          - `cndary` passenger
+          - `phpmyadmin`
 
       - server web start din `/opt/nginx` ca si service
+          - `/opt/nginx/etc/nginx.conf`
           - implicit pornit on reboot
           - acum ar trebui sa functioneze `sudo service nginx start|stop|...|`
           - `sudo /usr/sbin/update-rc.d -f nginx defaults`
@@ -12,7 +19,11 @@
           - `sudo mv init-deb.sh /etc/init.d/nginx`
           - `wget -O init-deb.sh http://library.linode.com/assets/660-init-deb.sh`
 
+      - server MySQL
+          - implicit pornit on reboot
+
   * instalare diverese
+      - `sudo apt-get install php5 php5-fdm`
       - `rvmsudo passenger-install-nginx-module` instalare nginx in `/opt/nginx`
       - `sudo apt-get install libcutl4-openssl-dev` required by passenger-nginx
       - `gem install passenger` for "mod_rail"
