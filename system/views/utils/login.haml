@@ -1,0 +1,20 @@
+%form{action: "/utils/login",method: "post"}
+  %table
+    %tbody
+      %tr
+        %td
+          %span.label{for: "name"}= t('login.name')
+        %td
+          %input.ui-state-default{type: "text",name: "name"}
+      %tr
+        %td
+          %span.label{for: "password"}= t('login.password')
+        %td
+          %input.ui-state-default{type: "password",name: "password"}
+    %tfoot
+      %tr
+        %td.ta-ce{:colspan => "2"}
+          %input.cdate{type: 'hidden',name: 'cdate'}
+          %button{type: "submit"}
+            %i.fa.fa-unlock.fa-lg
+            = t('button.login')

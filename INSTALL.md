@@ -8,7 +8,7 @@
 
       - server web configurare `/opt/nginx/conf`
           - `cndary` passenger
-          - `phpmyadmin`
+          - ptr. `phpmyadmin` symlink `sudo ln -s /usr/share/phpmyadmin/ /opt/nginx/html/mysql`
 
       - server web start din `/opt/nginx` ca si service
           - `/opt/nginx/etc/nginx.conf`
@@ -20,10 +20,13 @@
           - `wget -O init-deb.sh http://library.linode.com/assets/660-init-deb.sh`
 
       - server MySQL
+          - comentare linia `#bind-address = 127.0.0.1` in `/etc/mysql/my.conf` ptr. acces de afara
+          - `mysql -u root -p` si comanda `GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'scherer';` ptr. acces de afara
           - implicit pornit on reboot
 
   * instalare diverese
-      - `sudo apt-get install php5 php5-fdm`
+      - `sudo apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-xcache`
+      - `sudo apt-get install php5 php5-fdm phpmyadmin`
       - `rvmsudo passenger-install-nginx-module` instalare nginx in `/opt/nginx`
       - `sudo apt-get install libcutl4-openssl-dev` required by passenger-nginx
       - `gem install passenger` for "mod_rail"

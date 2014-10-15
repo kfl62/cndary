@@ -1,0 +1,28 @@
+firm:
+  public:
+    controller:     'public'
+    views:          'trst'
+    layout:         'layout'
+    page:
+      title:        'CND Ltd.'
+      header:       'CND motto'
+      footer_text:  '&copy; 2014 CND Ltd.'
+      footer_title: 'Ary Scherer'
+  system:
+    page:
+      title:        'CND Ltd'
+      header:       'CND Analize'
+      footer_text:  '&copy; 2004-2014 Ary'
+      footer_title: 'Ary Scherer'
+
+  sass_dir:     'system/assets/stylesheets'
+  css_dir:      'public/stylesheets'
+  css_path:     '/stylesheets'
+  images_dir:   'public/images'
+  images_path:  '/images'
+  i18n_path:    'cnd'
+  js_path:      'cnd'
+
+  db_devel:     'cnd'
+  db_test:      'cnd_test'
+  db_prod:      'cnd'
