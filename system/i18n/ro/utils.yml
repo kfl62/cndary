@@ -1,0 +1,10 @@
+ro:
+  cnd:
+    login:
+      title: Autentificare
+      link_in: Login
+      link_out: Logout
+      name: Nume
+      password: Parolă
+      authenticated_as: |
+        Autentificat ca şi:
