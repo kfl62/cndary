@@ -1,0 +1,17 @@
+%p.header-logo
+%p.header-title.ce= Cnd.firm.public['page']['header']
+%p.header-auth
+  %span
+    %a.header-login.st.em{href: '/utils/login', data: {title: t('login.title')}}
+      #{t('login.link_in')}
+      %i.fa.fa-sign-in
+    %a.st.em{href: "http://trst.ro"}
+      TrustSys
+      %i.fa.fa-external-link
+    %br
+  %span= "IP: #{request.ip}<br>"
+  %br
+  %span #{t('login.authenticated_as')}<br>
+  %span.header-user.st.em
+    %i.fa.fa-lock
+    #{@current_user.login_name rescue 'Anonymous'}
