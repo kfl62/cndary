@@ -1,0 +1,169 @@
+[class*=ui-widget-overlay] {
+  background: none !important;
+}
+[class*=ui-dialog-cnd] {
+  box-shadow: .5rem .5rem $cnd-color-bg-dark;
+}
+[class*=ui-tooltip] {
+  font: 1.1rem Verdana, sans-serif !important;
+  max-width: 100% !important;
+  padding: .5rem !important;
+}
+[class*=ui-widget] {
+  font-size: 1.2rem;
+}
+#loginDialog {
+  span {
+    padding: 1rem .5rem;
+  }
+  button {
+    margin-top: 0.5em
+  }
+}
+#deskDialog{
+  [class*=ui-button-text] {
+    line-height: 1;
+    padding: .1em .5rem;
+    i:not(.fa-only) {
+      font-size: 1.4rem;
+      padding-right: .5rem;
+      vertical-align: -5%;
+    }
+  }
+  table.inner {
+    margin: auto;
+  }
+  div:not(.select2-container), tr.pdb-05 td {
+    padding-bottom: .5rem;
+  }
+  div:not(.select2-container), tr.pdt-05 td {
+    padding-top: .5rem;
+  }
+  td {
+    @include cnd-relations-sortable;
+    & div.select2-container {
+      margin: .3rem 0;
+    }
+    & > span {
+      max-width: 55rem;
+      padding: .1rem .5rem;
+      &:only-child {display: block;}
+      &.link {
+        &:hover {
+          background: $cnd-color-bg-hlight;
+          color: $cnd-color-txt-darker;
+          cursor: pointer;
+        }
+      }
+    }
+    & > input[type="radio"] {
+      vertical-align: middle;
+      margin: .2rem 2rem 0;
+      &:before {
+        display: inline-block;
+        position: relative;
+        bottom: .2rem;
+      }
+      &.true_ro {
+        &:before {
+          text-indent: -2rem;
+          content: 'Da';
+        }
+      }
+      &.false_ro {
+        &:before {
+          text-indent: -2rem;
+          content: 'Nu';
+        }
+      }
+    }
+    & > detail {
+      border: solid 1px $cnd-color-bg-dark;
+      border-radius: .5rem;
+      color: $cnd-color-txt-darker;
+      display: inline-block;
+      padding: 1rem;
+      &.info {
+        background-color: $cnd-color-bg-info;
+      }
+      &.error, &.warning {
+        background-color: $cnd-color-bg-warning;
+      }
+      &.detail{
+        background: $cnd-color-bg-detail;
+      }
+    }
+    &:not([class*='w-']) > input[type="text"], input[type="password"] {
+      &:only-child {
+        width: 100%;
+        padding-left: .3rem;
+      }
+    }
+    &[class*=ta-] {
+      padding: 0;
+    }
+  }
+  thead, tbody tr:last-child td:last-child:only-child {
+    padding-bottom: .5rem;
+  }
+  tfoot tr td:last-child {
+    border-top: solid .1rem $cnd-color-bg-dark;
+    padding: .5rem .5rem 0;
+  }
+  tbody.inner {
+    border: solid .1rem  $cnd-color-bg-dark;
+    tr {
+      &:first-child {
+        text-align: center;
+      }
+      &:nth-child(2) {
+        td {
+          border-top: solid 1px $cnd-color-bg-dark;
+        }
+      }
+      &:nth-child(odd) {
+        background-color: $cnd-color-bg-detail;
+      }
+      &:last-child {
+        color: rgba(255, 0, 0, .9);
+        font-weight: bold;
+        text-align: center;
+        td {
+          border-top: solid 1px $cnd-color-bg-dark;
+        }
+      }
+    }
+    td {
+      border-right: solid 1px $cnd-color-bg-dark;
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
+#xhr_info {
+  border: solid 1px $cnd-color-bg-dark;
+  border-radius: .5rem;
+  box-shadow: .5rem .5rem $cnd-color-bg-dark;
+  color: $cnd-color-txt-darker;
+  display: none;
+  max-width: 50rem;
+  padding: 1rem;
+  position: fixed;
+  z-index: 102;
+  &.info {
+    background-color: $cnd-color-bg-info;
+  }
+  &.error, &.warning {
+    background: $cnd-color-bg-warning;
+  }
+  &.detail{
+    background: $cnd-color-bg-detail;
+  }
+}
+#relationsContainer {
+  @include cnd-relations-sortable;
+  border-radius: .5rem;
+  box-shadow: .5rem .5rem $cnd-color-bg-dark;
+  position: fixed;
+}
