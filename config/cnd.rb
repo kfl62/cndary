@@ -35,7 +35,11 @@ module Cnd
     def models
       opt.models || File.join(CND_ROOT,'system','models')
     end
-    # @todo
+     # @todo
+    def controllers
+      opt.controllers || File.join(CND_ROOT,'system','controllers')
+    end
+   # @todo
     def firm
       file = YAML.load_file File.join(CND_ROOT,'config','firm.yml')
       OpenStruct.new file['firm']
@@ -64,10 +68,9 @@ module Cnd
       end
     end
   end
-  autoload :System,               'system'
-  autoload :Public,               Cnd.firm.public['controller']
-  autoload :Utils,                'utils'
-  autoload :Assets,               'assets'
+  Dir.glob(File.join(controllers,'*.rb')).each do |m|
+    require m
+  end
   Dir.glob(File.join(models,'*.rb')).each do |m|
     require m
   end

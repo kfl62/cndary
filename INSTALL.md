@@ -1,6 +1,8 @@
 ####Configurare Ubntu
   * configurare aplicatie
 
+      - `sudo usermod -a -G www-data ary` user ary membru grupa www-data
+      - `chown -R nobody:www-data /opt/nginx`
       - `git clone https://kfl62@bitbucket.org/kfl62/cndary.git`
       - `cd /opt/nginx/html`
 

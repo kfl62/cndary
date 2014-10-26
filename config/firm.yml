@@ -1,8 +1,5 @@
 firm:
   public:
-    controller:     'public'
-    views:          'trst'
-    layout:         'layout'
     page:
       title:        'CND Ltd.'
       header:       'CND motto'
@@ -23,6 +20,10 @@ firm:
   i18n_path:    'cnd'
   js_path:      'cnd'
 
+  database:        'mysql2'
+  mysql_host:      'localhost'
+  mysql_username:  'root'
+  mysql_password:  'scherer'
   db_devel:     'cnd'
   db_test:      'cnd_test'
   db_prod:      'cnd'
