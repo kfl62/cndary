@@ -15,7 +15,7 @@ Haml::Options.defaults[:hyphenate_data_attrs] = false
 Dir.glob(File.join(CND_ROOT, 'lib','**','*.rb')).each{|r| require r}
 # Load configurations
 Dir.glob(File.join(CND_ROOT, 'config','**','*.rb')).each{|r| require r}
-# Initialize path for Trst
+# Initialize path for Cnd
 Dir['system/*'].each do |dir|
   dir = File.join(File.expand_path('..',File.dirname(__FILE__)),dir)
   $LOAD_PATH.unshift(dir) unless $LOAD_PATH.include?(dir)
