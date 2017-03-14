@@ -1,10 +1,10 @@
 !!! 5
 %html
   = haml :'layout/_html-head'
-  %body{id: "system",data: {js_module_path: Cnd.firm.js_path,admin: @current_user.admin?.to_s}}
+  %body{id: "system",data: {admin: @current_user.admin?.to_s}}
     %section.header
-      %header
-        = haml :'layout/_header'
+      -# %header
+      -#   = haml :'layout/_header'
       %nav.menu
         = haml :'layout/_menu'
     %section.content

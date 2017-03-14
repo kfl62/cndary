@@ -1,16 +1,16 @@
-define ['libs/trst_msg','public/trst_login','public/trst_map'], ()->
-  $.extend Trst,
+define ['libs/cnd_msg','public/cnd_login','public/cnd_map'], ()->
+  $.extend Cnd,
     init: ()->
-      Trst.msgHide()
+      Cnd.msgHide()
       $('a.header-login').click ()->
-        Trst.login($(this))
+        Cnd.login($(this))
         false
       $menuItems = $('nav.menu ul li a').click ()->
         $('#xhr_content').load "/#{$(this).attr('id')}"
         false
-      Trst.gmap($('#google_map')[0])
+      Cnd.gmap($('#google_map')[0])
       $(document).tooltip
         content: ()->
           $(@).attr('title').replace(/\n/g, "<br/>")
       return
-  Trst
+  Cnd

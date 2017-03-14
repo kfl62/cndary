@@ -1,14 +1,14 @@
 firm:
   public:
     page:
-      title:        'CND Ltd.'
-      header:       'CND motto'
-      footer_text:  '&copy; 2014 CND Ltd.'
+      title:        'CND Control SRL'
+      header:       'CND Control'
+      footer_text:  '&copy; 2014 CND Control SRL'
       footer_title: 'Ary Scherer'
   system:
     page:
-      title:        'CND Ltd'
-      header:       'CND Analize'
+      title:        'CND Control SRL'
+      header:       'CND Control'
       footer_text:  '&copy; 2004-2014 Ary'
       footer_title: 'Ary Scherer'
 

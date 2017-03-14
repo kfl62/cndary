@@ -9,15 +9,15 @@ require.config({
 
 require(['jquery','jquery-ui','/javascripts/libs/jquery.ba-tinypubsub.min.js'], function($){
   $(function(){
-    Trst = {debug: false};
+    Cnd = {debug: false};
     $log = function(txt){
-      if (Trst.debug){
+      if (Cnd.debug){
         console.log(txt)
       }
     };
     if ($('body').attr('id') == 'public'){
       require(['public/main'], function(){
-        Trst.init()
+        Cnd.init()
       })
     } else {
       require(['system/main'], function(){
@@ -26,12 +26,12 @@ require(['jquery','jquery-ui','/javascripts/libs/jquery.ba-tinypubsub.min.js'], 
           var module  = js_module_path.substr(0,1).toUpperCase() + js_module_path.substr(1)
           window[module] = {}
           require([js_module_path + '/main'], function(module){
-            Trst.module = module
-            Trst.init()
+            Cnd.module = module
+            Cnd.init()
             module.init()
           })
         } else {
-          Trst.init()
+          Cnd.init()
         }
       })
     }

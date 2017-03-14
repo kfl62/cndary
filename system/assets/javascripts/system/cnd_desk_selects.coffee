@@ -1,26 +1,26 @@
 define () ->
-  $.extend true,Trst,
+  $.extend true,Cnd,
     desk:
       selects:
         handleOID: (select)->
-          $hd   = Trst.desk.hdo
-          $form = Trst.desk.hdf
+          $hd   = Cnd.desk.hdo
+          $form = Cnd.desk.hdf
           $id   = select.attr('id')
           select.on 'change', ()->
             $hd[$id] = select.val()
           return
         handleRID: (select)->
-          $hd   = Trst.desk.hdo
-          $form = Trst.desk.hdf
+          $hd   = Cnd.desk.hdo
+          $form = Cnd.desk.hdf
           select.on 'change', () ->
-            Trst.lst.setItem 'r_mdl', 'fake_mdl'
-            Trst.lst.setItem 'r_id', select.val()
+            Cnd.lst.setItem 'r_mdl', 'fake_mdl'
+            Cnd.lst.setItem 'r_id', select.val()
             $url = "#{$form.attr('action')}/#{$hd.dialog}?r_id=#{select.val()}"
-            Trst.desk.init($url)
+            Cnd.desk.init($url)
             return
           return
         init: ()->
           @handleOID($('select#oid'))
           @handleRID($('select[id$=_id]'))
-          $log('Trst.desk.selects.init() OK...')
-  Trst.desk.selects
+          $log('Cnd.desk.selects.init() OK...')
+  Cnd.desk.selects

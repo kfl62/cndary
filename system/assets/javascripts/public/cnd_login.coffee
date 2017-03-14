@@ -1,5 +1,5 @@
 define ['jquery-ui'], ()->
-  $.extend true,Trst,
+  $.extend true,Cnd,
     login: (node)->
       init = ()->
         $('.cdate').val($.datepicker.formatDate('yy-mm-dd', new Date()))
@@ -24,4 +24,4 @@ define ['jquery-ui'], ()->
             return
       $login.dialog('open')
       return
-  Trst
+  Cnd

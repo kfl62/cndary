@@ -1,5 +1,5 @@
 define () ->
-  $.extend true,Trst,
+  $.extend true,Cnd,
     desk:
       inputs:
         handleUI: ()->
@@ -35,8 +35,8 @@ define () ->
         hanedleDatePicker: (node)->
           $dp = $(node)
           now = new Date()
-          min = if Trst.lst.admin is 'true' then new Date(now.getFullYear(),now.getMonth() - 1,1) else new Date(now.getFullYear(),now.getMonth(),1)
-          max = if Trst.lst.admin is 'true' then '+1' else '+0'
+          min = if Cnd.lst.admin is 'true' then new Date(now.getFullYear(),now.getMonth() - 1,1) else new Date(now.getFullYear(),now.getMonth(),1)
+          max = if Cnd.lst.admin is 'true' then '+1' else '+0'
           $dp.datepicker
             altField: '#date_send'
             altFormat: 'yy-mm-dd'
@@ -58,13 +58,13 @@ define () ->
             $mod = $sum % 11
             if ($mod < 10 and $mod.toString() is id.charAt(12)) or ($mod is 10 and id.charAt(12) is "1") then true else false
           inputTooShortMsg: (input, min)->
-            $msg = Trst.i18n.msg.input_too_short_strt.replace '%{nr}', (min - input.length) if input.length is 0
-            $msg = Trst.i18n.msg.input_too_short_more.replace '%{nr}', (min - input.length) if input.length isnt 0
-            $msg = Trst.i18n.msg.input_too_short_last if (min - input.length) is 1
+            $msg = Cnd.i18n.msg.input_too_short_strt.replace '%{nr}', (min - input.length) if input.length is 0
+            $msg = Cnd.i18n.msg.input_too_short_more.replace '%{nr}', (min - input.length) if input.length isnt 0
+            $msg = Cnd.i18n.msg.input_too_short_last if (min - input.length) is 1
             $msg
         init: ()->
           @handleUI()
           @handleIdPN()
           @hanedleDatePicker $('#date_show')
-          $log('Trst.desk.inputs.init() OK...')
-  Trst.desk.inputs
+          $log('Cnd.desk.inputs.init() OK...')
+  Cnd.desk.inputs

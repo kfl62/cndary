@@ -1,7 +1,7 @@
 define ()->
   sysMsg = $.subscribe 'xhrMsg', (event,what,kind,data)->
     $xhr_msg = $('#xhr_msg')
-    $msg = eval("Trst.i18n.#{what}")
+    $msg = eval("Cnd.i18n.#{what}")
     if typeof $msg is 'string'
       $msg = $msg.replace '%{data}', data
       $icon = switch
@@ -39,7 +39,7 @@ define ()->
           .fadeOut(1000,'linear',()-> $(this).removeAttr('class'); return)
         return
     return
-  $.extend Trst,
+  $.extend Cnd,
     publish: (args...)->
       $.publish 'xhrMsg', args
       return
@@ -56,4 +56,4 @@ define ()->
         if $('#xhr_msg').hasClass('error') then d = 5000 else d = 0
         $('#xhr_msg').stop(true,true).delay(d).fadeOut(500,'linear',()-> $(this).removeAttr('class');return)
         return
-  Trst
+  Cnd

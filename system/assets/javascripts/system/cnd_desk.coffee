@@ -1,4 +1,4 @@
-define ['system/trst_desk_buttons','system/trst_desk_selects','system/trst_desk_inputs','system/trst_desk_tables'], ()->
+define ['system/cnd_desk_buttons','system/cnd_desk_selects','system/cnd_desk_inputs','system/cnd_desk_tables'], ()->
   do ($ = jQuery, window, document) ->
     $.widget "app.dialog", $.ui.dialog,
       options:
@@ -19,13 +19,13 @@ define ['system/trst_desk_buttons','system/trst_desk_selects','system/trst_desk_
 
   $.extend true, $.fn.select2.defaults,
     formatInputTooShort: (input, min)->
-      Trst.desk.inputs.__f.inputTooShortMsg(input, min)
+      Cnd.desk.inputs.__f.inputTooShortMsg(input, min)
     formatSearching: ()->
-      Trst.i18n.msg.searching
+      Cnd.i18n.msg.searching
     formatNoMatches: (term)->
-     Trst.i18n.msg.no_matches
+     Cnd.i18n.msg.no_matches
 
-  $.extend true, Trst,
+  $.extend true, Cnd,
     desk:
       readData: ()->
         @hdo = if $('#hidden_data').length then $('#hidden_data').data() else {}
@@ -37,7 +37,7 @@ define ['system/trst_desk_buttons','system/trst_desk_selects','system/trst_desk_
         @selects.init() if $('select').length
         @inputs.init()  if $('input').length
         @tables.init()  if $('table').length
-        Trst.module.desk.init()  if Trst.module?
+        Cnd.module.desk.init()  if Cnd.module?
         return
       createDesk: (data)->
         $desk = if $('#deskDialog').length then $('#deskDialog') else $('<div id="deskDialog"></div>')
@@ -75,7 +75,7 @@ define ['system/trst_desk_buttons','system/trst_desk_selects','system/trst_desk_
         return
       createDownload: (data)->
         $download = if $('#downloadDialog').length then $('#downloadDialog') else $('<div id="downloadDialog" class="small"></div>')
-        $data = Trst.i18n.msg.report.error. replace '%{data}', data
+        $data = Cnd.i18n.msg.report.error. replace '%{data}', data
         $download.html($data)
         .dialog
           dialogClass: 'ui-dialog-trst'
@@ -91,7 +91,7 @@ define ['system/trst_desk_buttons','system/trst_desk_selects','system/trst_desk_
           close: ()->
             $(@).remove()
             return
-          title: Trst.i18n.title.report.error
+          title: Cnd.i18n.title.report.error
         $download.dialog('open')
       init: (url,type,data)->
         $url  = url
@@ -104,32 +104,32 @@ define ['system/trst_desk_buttons','system/trst_desk_selects','system/trst_desk_
           beforeSend: ()-> $('#xhr_msg').html("<span>...</span>").addClass('loading').prepend("<i class='fa fa-refresh fa-spin fa-lg'></i>").show()
           complete:   ()-> $('#xhr_msg').hide().removeAttr('class').html('')
         $request.fail (xhr)->
-          Trst.publish('msg.desk.error', 'error', "#{xhr.status} #{xhr.statusText}")
+          Cnd.publish('msg.desk.error', 'error', "#{xhr.status} #{xhr.statusText}")
           false
         $request.done (data)->
-          if $type isnt 'GET' then Trst.publish('flash')
+          if $type isnt 'GET' then Cnd.publish('flash')
           if $type isnt 'DELETE'
-            Trst.desk.createDesk(data)
-            if Trst.desk.readData()
+            Cnd.desk.createDesk(data)
+            if Cnd.desk.readData()
               $desk  = $('#deskDialog')
-              $title = Trst.i18n.title[Trst.desk.hdo.dialog][Trst.desk.hdo.js_ext] || Trst.i18n.title[Trst.desk.hdo.dialog]['main']
-              $tdata = Trst.desk.hdo.title_data || Trst.desk.hdo.model_name
+              $title = Cnd.i18n.title[Cnd.desk.hdo.dialog][Cnd.desk.hdo.js_ext] || Cnd.i18n.title[Cnd.desk.hdo.dialog]['main']
+              $tdata = Cnd.desk.hdo.title_data || Cnd.desk.hdo.model_name
               $desk.dialog title: $("<span>#{$title.replace('%{data}',$tdata)}</span>").text()
               $desk.dialog('open')
-              Trst.desk.handleRequires()
+              Cnd.desk.handleRequires()
               return
             else
-              alert Trst.i18n.msg.session.relogin
-              Trst.lst.clear()
+              alert Cnd.i18n.msg.session.relogin
+              Cnd.lst.clear()
               window.location = '/'
               $log 'Initialize error...'
           else
-            if Trst.lst.r_path
-              $url = Trst.lst.r_path
-              Trst.lst.removeItem 'r_path'
-              Trst.lst.removeItem 'r_mdl'
-              Trst.lst.removeItem 'r_id'
-              Trst.desk.init($url)
+            if Cnd.lst.r_path
+              $url = Cnd.lst.r_path
+              Cnd.lst.removeItem 'r_path'
+              Cnd.lst.removeItem 'r_mdl'
+              Cnd.lst.removeItem 'r_id'
+              Cnd.desk.init($url)
               return
-        $log('Trst.desk.init() ...')
-  Trst.desk
+        $log('Cnd.desk.init() ...')
+  Cnd.desk

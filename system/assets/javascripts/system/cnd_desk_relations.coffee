@@ -1,5 +1,5 @@
 define () ->
-  $.extend true,Trst,
+  $.extend true,Cnd,
     desk:
       relations:
         makeSelectable: ()->
@@ -24,16 +24,16 @@ define () ->
             zIndex: 1005
           $container
         init: ()->
-          $hd      = Trst.desk.hdo
-          $form    = Trst.desk.hdf
+          $hd      = Cnd.desk.hdo
+          $form    = Cnd.desk.hdf
           $button  = $('#deskDialog form button[data-action="relations"]')
           $url     = "#{$form.attr('action').replace(/sys/,'utils/relations')}/#{$hd.oid}/#{$button.data('rel_to')}"
           $request = $.ajax url: $url, type: 'GET'
           $request.fail (xhr) ->
-            Trst.publish('error.desk', 'error', "#{xhr.status} #{xhr.statusText}")
+            Cnd.publish('error.desk', 'error', "#{xhr.status} #{xhr.statusText}")
           $request.done (data) ->
-            $container = Trst.desk.relations.createContainer()
+            $container = Cnd.desk.relations.createContainer()
             $container.append(data).appendTo('#deskDialog')
-            Trst.desk.relations.makeSelectable()
-          $log('Trst.desk.relations.init() OK...')
-  Trst.desk.relations
+            Cnd.desk.relations.makeSelectable()
+          $log('Cnd.desk.relations.init() OK...')
+  Cnd.desk.relations

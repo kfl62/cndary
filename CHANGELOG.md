@@ -3,33 +3,35 @@
 * estimated release date: **2014-10-26**
 
 
-* **feature v0.0.2**, fix [#10][#10], [#11][#11], [#12] [#12],  [#13][#13]
-   - feature date: **2014-10-26**
-   - bump version v0.0.2
-   - update CHANGELOG, fix [#10][#10]
-   - update INSTALL, fix [#11][#11]
-   - Gemfile require ORM
-   - models: ORM models, skeleton issue [#13][#13]
-   - confid, migration `create_table` skeletons issue [#13][#13]
-   - controllers, `db.rb` connect to mysql, part of issue [#13][#13]
-   - config, `cnd.rb` cleanup
-   - config, `firm.yml` mysql connection string related data
-   - config, `boot.rb` typo
+  * **feature v0.0.2**, fix [#10][#10], [#11][#11], [#12] [#12],  [#13][#13]
+     - feature date: **2014-10-26**
+     - bump version v0.0.2
+     - update CHANGELOG, fix [#10][#10]
+     - update INSTALL, fix [#11][#11]
+     - Gemfile require ORM
+     - models: ORM models, skeleton issue [#13][#13]
+     - confid, migration `create_table` skeletons issue [#13][#13]
+     - controllers, `db.rb` connect to mysql, part of issue [#13][#13]
+     - config, `cnd.rb` cleanup
+     - config, `firm.yml` mysql connection string related data
+     - config, `boot.rb` typo
 
-* **feature v0.0.1**
-   - feature date: **2014-10-15**
-   - bump version v0.0.1
-   - update CHANGELOG
-   - i18n skeleton, traducere issue [#9][#9]
-   - views skeleton, layout, issue [#8][#8]
-   - assets js skeleton, issue [#7][#7]
-   - assets css skeleton, issue [#7][#7]
-   - controllers controllere de baza issue [#6] [#6]
-   - `public` folder, folder, cleanup, artwork, fonts etc.
-   - issue  [#5][#5], update Gemfile, INSTALL.md, .gitignore
-   - lib config files issue [#5][#5]
-   - config files issue [#5][#5]
-   - `config.ru` issue [#4][#4]
+
+  * **feature v0.0.1**
+     - feature date: **2014-10-15**
+     - bump version v0.0.1
+     - update CHANGELOG
+     - i18n skeleton, traducere issue [#9][#9]
+     - views skeleton, layout, issue [#8][#8]
+     - assets js skeleton, issue [#7][#7]
+     - assets css skeleton, issue [#7][#7]
+     - controllers controllere de baza issue [#6] [#6]
+     - `public` folder, folder, cleanup, artwork, fonts etc.
+     - issue  [#5][#5], update Gemfile, INSTALL.md, .gitignore
+     - lib config files issue [#5][#5]
+     - config files issue [#5][#5]
+     - `config.ru` issue [#4][#4]
+
 
 ##v.0.0.pre
 

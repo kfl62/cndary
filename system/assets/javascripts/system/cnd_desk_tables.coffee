@@ -1,5 +1,5 @@
 define () ->
-  $.extend true,Trst,
+  $.extend true,Cnd,
     desk:
       tables:
         handleScroll: (tbl,h=450)->
@@ -38,14 +38,14 @@ define () ->
           $('#deskDialog thead').after($tabsDefs)
           $tabsDefs.tabs
             panelTemplate: '<tbody></tbody>'
-            active: if Trst.lst.tab then Trst.lst.tab else 0
+            active: if Cnd.lst.tab then Cnd.lst.tab else 0
             create: (event,ui) ->
               $('input.focus').focus()
-              Trst.lst.removeItem 'tab'
+              Cnd.lst.removeItem 'tab'
               return
           return
         init: ()->
           @handleScroll($('table[data-mark~=scroll]')) if $('table[data-mark~=scroll]').height() > 450
           @handleTab() if $('tbody[id^="tabs-"]').length
-          $log('Trst.desk.tables.init() OK...')
-  Trst.desk.tables
+          $log('Cnd.desk.tables.init() OK...')
+  Cnd.desk.tables

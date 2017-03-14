@@ -1,9 +1,11 @@
 # encoding: utf-8
+require_relative 'db'
 module Cnd
   # ##Description
   # ##Scope
   # @todo documentation
   class Utils < Sinatra::Base
+    include Db
     register Sinatra::Flash
     register Cnd::Helpers
     set :views, File.join(Cnd.views, 'utils')
@@ -19,10 +21,9 @@ module Cnd
     end
     post '/login' do
       if Date.today == Date.new(*params[:cdate].split('-').map(&:to_i))
-        if user = User.authenticate(params[:name], params[:password])
+        if user = Users.authenticate(params[:name], params[:password])
           session[:user] = user.id
           user.set(last_login: Time.now)
-          user.login(request.ip) if user.methods.include?(:login)
           flash[:msg] = {msg: {txt: t('msg.login.start'), cls: "info"}}
           redirect "#{lp}/sys"
         else
@@ -36,8 +37,6 @@ module Cnd
     end
     # Logout
     get '/logout' do
-      user = User.find(session[:user])
-      user.logout if user.methods.include?(:logout)
       session[:user] = nil
       flash[:msg] = {msg: {txt:t('msg.login.end'), cls: "info"}}
       redirect "#{lp}/"

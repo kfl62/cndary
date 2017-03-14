@@ -7,7 +7,10 @@ class CreateTableLocatii < Sequel::Migration
 
   def up
     create_table(:locatii) do
-      primary_key   :id
+      column :Localitate, "varchar(50)"
+      column :Sediu,      "varchar(50)"
+
+      primary_key :LocLab, :type=>"int(10)"
     end
   end
 

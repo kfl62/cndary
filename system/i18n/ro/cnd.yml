@@ -1,0 +1,167 @@
+ro:
+  cnd: &cnd
+    'true':  Da
+    'yes':   Da
+    'false': Nu
+    'no':    Nu
+    legend: Legendă
+    lang:
+      ro: Română
+      en: Engleză
+      hu: Maghiară
+    month: ["Luna", "Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"]
+    button:
+      login:    Autentificare
+      cancel:   Renunţare
+      edit:     Editare
+      show:     Detalii
+      create:   Creare
+      delete:   Ştergere
+      save:     Salvare
+      upload:   Încărcare
+      preview:  Vizionare
+      download: Descărcare
+      print:    Generare PDF
+      query:    Interogare
+      new_row:  Adăugare linie
+      'true': Da
+      'yes': Da
+      'no': Nu
+      'no': Nu
+    title:
+      filter:
+        main: |
+          Administrare &raquo;%{data}&laquo; - Selectare -
+      query:
+        main: |
+          Interogare/Statistică &raquo;%{data}&laquo;
+      show:
+        main: |
+          Administrare &raquo;%{data}&laquo; - Detalii -
+      edit:
+        main: |
+          Administrare &raquo;%{data}&laquo; - Editare -
+      create:
+        main: |
+          Administrare &raquo;%{data}&laquo; - Creare -
+      delete:
+        main: |
+          Administrare &raquo;%{data}&laquo; - Ştergere -
+      repair:
+        main: |
+          Administrare &raquo;%{data}&laquo; - Reparaţii -
+      report:
+        main: |
+          Configurare &raquo;%{data}&laquo;
+        error: |
+          Hmmm ceva nu-a mers bine...!
+      relations: |
+        &larr; a (se) asocia<br/>
+        &rarr; a (se) disocia
+      relations_inv: |
+        a (se) asocia &nbsp;&larr;<br/>
+        a (se) disocia &rarr;
+    intro:
+      filter:
+        main: |
+          Puteţi <b>Edita|Şterge</b> un(o) &raquo;%{data}&laquo; după ce îl(o) alegeţi din listă,
+          sau alegând <b>Creare</b> veţi crea unul(una).
+        not_ready: |
+          Din păcate această activitate nu este finalizată, dar dacă a apărut în meniu
+          înseamnă că va fi gata în curând :)
+      embedded:
+        main: |
+          Deoarece  &raquo;%{child}&laquo; este inclus în  &raquo;%{parent}&laquo;
+          prima dată trebuie să selectaţi un(o) %{parent}!<br>
+      create:
+        main: |
+          Apăsând pe <b>Salvare</b> veţi crea un(o) &raquo;%{data}&laquo;!
+          Dacă apăsaţi pe <b>Renunţare</b> nu se va crea nimic!
+      delete:
+        main: |
+          Atenţie se va şterge un(o) &raquo;%{data}&laquo; din baza de date!
+          Dacă v-aţi hotărât apăsaţi pe <b>Ştergere</b>.
+    select:
+      option: |
+        Alegeţi &raquo;%{data}&laquo;
+      placeholder: |
+        Alegeţi - %{data}
+    msg:
+      loading: Se încarcă pagina...
+      desk:
+        error: |
+          Ooops undeva este o greşeală ... %{data}
+      lang:
+        start: Limba aleasă este >Română<
+      login:
+        start: |
+          Autentificare reuşită!
+        end: |
+          La revedere!
+        error: |
+          Hmmm... Nume/Parolă greşită
+        error_date: |
+          Data din calculatorul Dvs. este greșit! Setați data și reveniți :)
+        required: |
+          Frumoasă încercare, dar este nevoie >Autentificare<
+        monthly_revision: |
+          În ultima zii a lunii, după ora 20:00, au acces doar Administratorii de sistem.<br>
+          Reveniți mâine!
+      show:
+        start: |
+          Se vor afişa detaliile ptr. &raquo;%{data}&laquo;!
+        end: |
+          Un(o) &raquo;%{data}&laquo; a fost salvat/ă...
+      edit:
+        start: |
+          Se va edita un(o) &raquo;%{data}&laquo;
+        end: |
+          Un(o) &raquo;%{data}&laquo; a fost salvat/ă...
+        error: |
+          Nu sa putut salva &raquo;%{data}&laquo;! Vezi detalii în formular!
+      create:
+        start: |
+          Se va crea un(o) &raquo;%{data}&laquo;
+        end: |
+          Un(o) &raquo;%{data}&laquo; a fost salvat/ă...
+        error: |
+          Nu sa putut crea &raquo;%{data}&laquo;! Vezi detalii în formular!
+      delete:
+        start: |
+          Atenţie se va şterge &raquo;%{data}&laquo;
+        end: |
+          &raquo;%{data}&laquo; a fost şters!
+        error: |
+          Nu sa putut şterge &raquo;%{data}&laquo;! Vezi detalii în formular!
+      report:
+        start: |
+          Acum se generează documentul. Aveţi puţintică răbdare...
+        error: |
+          <span class='warning'>Din păcate nu s-a putut genera <b>%{data}</b>.<br>
+          În cazul în care sunteţi convins că nu aveţi greşeli la formular<br>
+          închideţi această fereastră şi apăsaţi încă o dată pe "Generare PDF".<br>
+          Dacă nu funcţionează, <b>Ştergeţi</b> documentul după ce închideţi<br>
+          fereastra de avertizare!</span>
+      file_upload:
+        end: |
+          Fişierul a fost salvat pe server!
+        error: |
+          Fişierul <b>nu a fost</b> salvat pe server!
+      file_delete:
+        end: |
+          Fişierul a fost şters de pe server!
+        error: |
+          Fişierul <b>nu a fost</b> şters de pe server!
+      file_download:
+        check: Verific existenţa fişierului...
+        prepare: |
+          Fişierul %{name} (%{size}) va gata ptr. descărcare în aprox. %{time}
+        error: |
+          Fişierul <b>nu se poate descărca</b> de pe server!<br>
+          Motiv: Nu există fişierul.
+          Sunaţi la Varena Auto să remedieze problema...
+      select:
+        error: |
+          Nu aţi ales nici un(o) &raquo;%{data}&laquo;!
+      session:
+        relogin: "Eroare inițializare! ...\n\n\tÎncercați un nou: Login"

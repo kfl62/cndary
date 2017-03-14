@@ -1,4 +1,4 @@
-define ['/javascripts/libs/select2.min.js','/javascripts/libs/jquery.fileDownload.js','/javascripts/libs/jquery.ui.datepicker-ro.js','libs/trst_msg','system/trst_desk'], ()->
+define ['/javascripts/libs/select2.min.js','/javascripts/libs/jquery.fileDownload.js','/javascripts/libs/jquery.ui.datepicker-ro.js','libs/cnd_msg','system/cnd_desk'], ()->
   Storage::setObject = (key,value)->
     @setItem key, JSON.stringify(value)
   Storage::getObject = (key)->
@@ -12,17 +12,17 @@ define ['/javascripts/libs/select2.min.js','/javascripts/libs/jquery.fileDownloa
         e = $(@)
         e.val(parseFloat(e.val()).toFixed(n))
 
-  $.extend true,Trst,
+  $.extend true,Cnd,
     lst:  sessionStorage
     i18n: sessionStorage.getObject('i18n')
     handleMsg: ()->
       @msgHide()
-      unless Trst.lst.i18n?
+      unless Cnd.lst.i18n?
         $.post('/utils/msg', (data)->
-            Trst.lst.setObject 'i18n', data.msg.txt
-            Trst.i18n = Trst.lst.getObject('i18n')
-            delete Trst.i18n.sidebar
-            delete Trst.i18n.login
+            Cnd.lst.setObject 'i18n', data.msg.txt
+            Cnd.i18n = Cnd.lst.getObject('i18n')
+            delete Cnd.i18n.sidebar
+            delete Cnd.i18n.login
             return
           'json')
       return
@@ -38,9 +38,9 @@ define ['/javascripts/libs/select2.min.js','/javascripts/libs/jquery.fileDownloa
     handleTask: ()->
       $tasks = $('aside.sidebar').on 'click', 'ul li a', ()->
         $url = $(@).attr('href')
-        Trst.lst.setItem 'task_id', $(@).attr('id')
+        Cnd.lst.setItem 'task_id', $(@).attr('id')
         $.ajax({type: 'POST',url: "/sys/session/task_id/#{$(@).attr('id')}",async: false})
-        Trst.desk.init($url)
+        Cnd.desk.init($url)
         false
       return
     handleHelp: ()->
@@ -50,7 +50,7 @@ define ['/javascripts/libs/select2.min.js','/javascripts/libs/jquery.fileDownloa
           return
         return
       $helpClose = $('#content').on 'click', '#xhr_content p.close', ()->
-        $('#xhr_content').load "/sys/page_#{Trst.lst.page_id}"
+        $('#xhr_content').load "/sys/page_#{Cnd.lst.page_id}"
         return
       return
     handleTooltip: ()->
@@ -64,5 +64,5 @@ define ['/javascripts/libs/select2.min.js','/javascripts/libs/jquery.fileDownloa
       @handleTask()
       @handleHelp()
       @handleTooltip()
-      $log('Trst.init() OK...')
-  Trst
+      $log('Cnd.init() OK...')
+  Cnd
